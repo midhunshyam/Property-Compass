@@ -1,0 +1,161 @@
+{
+  "area": {
+    "lga": "Willoughby",
+    "state": "NSW",
+    "slug": "willoughby"
+  },
+  "generated": "2026-10-09",
+  "package_version": "1.0.0",
+  "crs": "EPSG:7856",
+  "inputs": {
+    "localities": 22,
+    "addresses": 43551,
+    "osm_highways": 14659,
+    "nsw_property": 90859,
+    "nsw_road_reserve": 7172,
+    "nsw_road_centreline": 4160
+  },
+  "sources": {
+    "gnaf": {
+      "release": "202608",
+      "url": "https://s3.ap-southeast-2.amazonaws.com/minus34.com/opendata/geoscape-202608/geoparquet/",
+      "licence": "G-NAF \u00a9 Geoscape Australia, licensed by the Commonwealth of Australia under the Open G-NAF End User Licence Agreement"
+    },
+    "boundaries": {
+      "release": "202608",
+      "licence": "Administrative Boundaries \u00a9 Geoscape Australia, CC BY 4.0"
+    },
+    "osm": {
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "timestamp": "2026-10-09T05:44:36Z",
+      "licence": "\u00a9 OpenStreetMap contributors, ODbL 1.0"
+    },
+    "nsw_cadastre": {
+      "service": "https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Land_Parcel_Property_Theme/FeatureServer",
+      "layers": {
+        "property": 12,
+        "road_reserve": 6,
+        "road_centreline": 1
+      },
+      "retrieved": "2026-10-09",
+      "licence": "\u00a9 Spatial Services (DCS), NSW Government, CC BY 4.0"
+    }
+  },
+  "addresses": 43551,
+  "sites": 19436,
+  "confidence_addresses": {
+    "high": 24772,
+    "medium": 17672,
+    "none": 685,
+    "low": 422
+  },
+  "confidence_sites": {
+    "high": 12931,
+    "medium": 6212,
+    "low": 199,
+    "none": 94
+  },
+  "match_sites": {
+    "street_name": 19383,
+    "street_base_name": 35,
+    "nearest_street": 9,
+    "street_name_without_suffix": 9
+  },
+  "orientation_share_standalone": {
+    "share_N": 0.1956,
+    "share_NE": 0.0546,
+    "share_E": 0.1901,
+    "share_SE": 0.0601,
+    "share_S": 0.1975,
+    "share_SW": 0.0607,
+    "share_W": 0.1903,
+    "share_NW": 0.0511,
+    "share_northerly": 0.3013
+  },
+  "coregistration": {
+    "points": 16534,
+    "share_inside_a_parcel": 0.9996,
+    "median_distance_to_parcel_centroid_m": 0.15,
+    "median_offset_east_m": 0.0,
+    "median_offset_north_m": 0.0
+  },
+  "validation": {
+    "reference_status": {
+      "ok": 18194,
+      "no_street_frontage": 830,
+      "short_frontage": 293,
+      "no_parcel": 118,
+      "ambiguous_frontage": 1
+    },
+    "methods": [
+      {
+        "method": "street_matched",
+        "description": "Street-matched frontage (this repository)",
+        "sites": 18193,
+        "parcels": 15864,
+        "same_8_point_direction": 0.9325015115703842,
+        "within_22_5_deg": 0.9677898092673006,
+        "within_45_deg": 0.9851041609410213,
+        "median_error_deg": 0.5038693603178785,
+        "p90_error_deg": 8.057012158616363
+      },
+      {
+        "method": "nearest_road",
+        "description": "Nearest OSM way of any class (v1 approach)",
+        "sites": 18193,
+        "parcels": 15864,
+        "same_8_point_direction": 0.6487660089045237,
+        "within_22_5_deg": 0.6719617435277304,
+        "within_45_deg": 0.694113120430935,
+        "median_error_deg": 1.459722952510532,
+        "p90_error_deg": 121.1628011941415
+      }
+    ],
+    "by_confidence": [
+      {
+        "confidence": "high",
+        "sites": 12349,
+        "parcels": 12082,
+        "same_8_point_direction": 0.9501983966313062,
+        "within_22_5_deg": 0.982346748724593,
+        "within_45_deg": 0.9945744594704025,
+        "median_error_deg": 0.45265854264960126,
+        "p90_error_deg": 5.342212341811801
+      },
+      {
+        "confidence": "medium",
+        "sites": 5683,
+        "parcels": 3909,
+        "same_8_point_direction": 0.9097307759985923,
+        "within_22_5_deg": 0.9507302481083935,
+        "within_45_deg": 0.9792363188456801,
+        "median_error_deg": 0.6421241699908364,
+        "p90_error_deg": 12.211084456726498
+      },
+      {
+        "confidence": "low",
+        "sites": 161,
+        "parcels": 41,
+        "same_8_point_direction": 0.37888198757763975,
+        "within_22_5_deg": 0.453416149068323,
+        "within_45_deg": 0.4658385093167702,
+        "median_error_deg": 72.13031022564905,
+        "p90_error_deg": 76.1983116133643
+      }
+    ]
+  },
+  "software": {
+    "python": "3.12.13",
+    "property-orientation": "1.0.0",
+    "geopandas": "1.2.0",
+    "shapely": "2.2.0",
+    "geos": "3.14.1",
+    "pyproj": "3.8.0",
+    "proj": "9.8.1",
+    "pyogrio": "0.13.0",
+    "gdal": "3.12.4",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "duckdb": "1.5.6"
+  }
+}

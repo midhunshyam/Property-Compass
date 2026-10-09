@@ -1,0 +1,10 @@
+# Keep GitHub's language statistics about the Python package, not generated outputs.
+notebooks/*.ipynb linguist-documentation
+docs/** linguist-documentation
+results/** linguist-generated
+tests/fixtures/** linguist-generated
+# ...but hand-written files in those folders are reviewed like code.
+results/README.md linguist-generated=false
+tests/fixtures/README.md linguist-generated=false
+tests/fixtures/*.py linguist-generated=false
+docs/map/** linguist-generated

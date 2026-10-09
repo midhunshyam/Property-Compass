@@ -1,0 +1,68 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "property-orientation"
+version = "1.0.0"
+description = "Which way does every property face? Street-frontage orientation for Australian addresses from G-NAF and OpenStreetMap, validated against the NSW cadastre."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Midhun Shyam" }]
+requires-python = ">=3.10"
+keywords = ["gis", "geopandas", "shapely", "g-naf", "openstreetmap", "cadastre", "orientation", "australia"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "geopandas>=1.0",
+    "shapely>=2.0",
+    "pyproj>=3.6",
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "pyarrow>=14",
+    "pyogrio>=0.7",
+    "duckdb>=1.1",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+viz = ["matplotlib>=3.8"]
+dev = ["pytest>=8", "ruff==0.16.10", "nbconvert>=7.16", "nbclient>=0.10", "ipykernel>=6"]
+
+[project.scripts]
+property-orientation = "property_orientation.cli:main"
+
+[project.urls]
+Repository = "https://github.com/midhunshyam/property-orientation"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/property_orientation"]
+
+[tool.hatch.build.targets.sdist]
+# MIT-licensed code only: results/, docs/, notebooks/ and the test fixtures carry data licences.
+include = ["/src", "/README.md", "/LICENSE", "/CITATION.cff", "/pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = [
+    # pyproj < 3.8 converts one-element arrays to scalars internally (NumPy >= 1.25 warns).
+    "ignore:Conversion of an array with ndim > 0 to a scalar is deprecated:DeprecationWarning:pyproj",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "NPY", "PD", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.per-file-ignores]
+"notebooks/*" = ["E402"]

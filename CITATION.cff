@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below. Its data outputs keep the licences of their sources (see README)."
+title: "Property Orientation: street-frontage orientation of Australian addresses from G-NAF and OpenStreetMap, validated against the NSW cadastre"
+authors:
+  - family-names: Shyam
+    given-names: Midhun
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/midhunshyam/property-orientation"
+keywords:
+  - GIS
+  - G-NAF
+  - OpenStreetMap
+  - cadastre
+  - orientation
+  - GeoPandas
+  - Shapely

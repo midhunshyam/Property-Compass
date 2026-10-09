@@ -1,0 +1,61 @@
+{
+  "area": {
+    "lga": "Willoughby",
+    "state": "NSW",
+    "slug": "willoughby"
+  },
+  "crs": "EPSG:7856",
+  "fetch_bounds_epsg4326": [
+    151.203278,
+    -33.8113445,
+    151.212617,
+    -33.8035486
+  ],
+  "fetch_buffer_m": 500.0,
+  "retrieved": "2026-10-09",
+  "counts": {
+    "addresses": 227,
+    "osm_highways": 345,
+    "nsw_property": 227,
+    "nsw_road_reserve": 30,
+    "nsw_road_centreline": 30,
+    "localities": 3
+  },
+  "sources": {
+    "gnaf": {
+      "release": "202608",
+      "url": "https://s3.ap-southeast-2.amazonaws.com/minus34.com/opendata/geoscape-202608/geoparquet/",
+      "licence": "G-NAF \u00a9 Geoscape Australia, licensed by the Commonwealth of Australia under the Open G-NAF End User Licence Agreement"
+    },
+    "boundaries": {
+      "release": "202608",
+      "licence": "Administrative Boundaries \u00a9 Geoscape Australia, CC BY 4.0"
+    },
+    "osm": {
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "timestamp": "2026-10-09T05:44:36Z",
+      "licence": "\u00a9 OpenStreetMap contributors, ODbL 1.0"
+    },
+    "nsw_cadastre": {
+      "service": "https://portal.spatial.nsw.gov.au/server/rest/services/NSW_Land_Parcel_Property_Theme/FeatureServer",
+      "layers": {
+        "property": 12,
+        "road_reserve": 6,
+        "road_centreline": 1
+      },
+      "retrieved": "2026-10-09",
+      "licence": "\u00a9 Spatial Services (DCS), NSW Government, CC BY 4.0"
+    }
+  },
+  "fixture": {
+    "name": "northbridge",
+    "window_epsg7856": [
+      333950.0,
+      6257575.0,
+      334300.0,
+      6257925.0
+    ],
+    "subset_of": "data/raw/willoughby",
+    "script": "tests/fixtures/make_fixture.py"
+  }
+}

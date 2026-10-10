@@ -1,4 +1,4 @@
-<h1 align="center">Property Orientation</h1>
+<h1 align="center">GIS Map Compass for Property Orientation</h1>
 
 <p align="center">
   <b>Which way does every property face?</b><br>
